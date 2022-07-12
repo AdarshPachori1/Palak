@@ -1,10 +1,44 @@
+//start of password form
+(function () {
+  //Display modal on click
+  $(".show-prompt-box").click(function (e) {
+    e.preventDefault();
+    $(".overlay, .prompt-box, .prompt-wrap").fadeIn();
+  });
+
+  //Fade out overlay and prompt-box
+  $(".overlay, .close").click(function () {
+    $(".overlay, .prompt-box").fadeOut();
+    $(".code-error").removeClass("is-error");
+    e.stopPropagation();
+  });
+
+  //Get value and compare to password
+  $(".prompt-box form").submit(function (e) {
+    e.preventDefault();
+    var codeWord = $(".clients").val();
+
+    if (codeWord.toLowerCase() == "iloveyouadarsh") {
+      $(".bg_heart, #carousel").fadeIn();
+      $(".introPasswordModal").fadeOut();
+    } else {
+      $(".code-error").addClass("is-error");
+      $(".prompt-box").addClass("shake");
+      setTimeout(function () {
+        $(".prompt-box").removeClass("shake");
+      }, 1000);
+    }
+  });
+})();
+//end of password form
+
 // start of background hearts
 $("#header-plugin").load(
   "https://vivinantony.github.io/header-plugin/",
   function () {
     $("a.back-to-link").attr(
       "href",
-      "http://blog.thelittletechie.com/2015/03/love-heart-animation-using-css3.html#tlt"
+      "https://blog.thelittletechie.com/2015/03/love-heart-animation-using-css3.html#tlt"
     );
   }
 );
