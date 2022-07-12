@@ -1,3 +1,4 @@
+// start of background hearts
 $("#header-plugin").load(
   "https://vivinantony.github.io/header-plugin/",
   function () {
@@ -71,3 +72,8 @@ var love = setInterval(function () {
     }
   });
 }, 500);
+//end of background hearts
+
+//start of carousel
+$(".carousel").carousel();
+//end of carousel

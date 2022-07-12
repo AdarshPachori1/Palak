@@ -1,16 +1,72 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Adarsh&lt;3Palak</title>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="css/style.css" />
-  <title>Adarsh&lt;3Palak</title>
-</head>
-
-<body>
-  <div class="bg_heart"></div>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
-</body>
-
+  <body>
+    <!-- background hearts -->
+    <div class="bg_heart">
+      <div class="massiveFirstPanelTextDiv">
+        <p class="massiveFirstPanelText">Hi, I love you b</p>
+      </div>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- end of background hearts -->
+    <!-- carousel -->
+    <div
+      id="carousel"
+      class="carousel slide carousel-fade"
+      data-ride="carousel"
+      data-interval="100000"
+    >
+      <ol class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+        <li data-target="#carousel" data-slide-to="3"></li>
+        <li data-target="#carousel" data-slide-to="4"></li>
+      </ol>
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        <div class="active item">
+          <img src="images/CEHos.jpg" class="imageVidCarousel" />
+        </div>
+        <div class="item">
+          <video controls class="imageVidCarousel">
+            <source src="images/ThaiYourPlace.MP4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="item">
+          <video controls class="imageVidCarousel">
+            <source src="images/PewPewPew.MP4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="item">
+          <video controls class="imageVidCarousel">
+            <source src="images/ItsASmallWorld.MP4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="active item">
+          <img src="images/disney_castle.jpg" class="imageVidCarousel" />
+        </div>
+      </div>
+      <!-- Carousel nav -->
+      <a class="carousel-control left" href="#carousel" data-slide="prev"
+        >&lsaquo;</a
+      >
+      <a class="carousel-control right" href="#carousel" data-slide="next"
+        >&rsaquo;</a
+      >
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.js"></script>
+    <!-- end of carousel -->
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
 </html>

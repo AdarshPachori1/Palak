@@ -1,10 +1,21 @@
-p{
-  color:blue
-}
-
+/* start of background hearts */
 html,
 body {
-  height: 100%
+  height: 100%;
+}
+
+.massiveFirstPanelTextDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15%;
+}
+
+.massiveFirstPanelText {
+  color: Blue;
+  font-size: 8em;
+  font-family: "Apple Chancery";
+  /* text-align: center; */
 }
 
 .bg_heart {
@@ -13,7 +24,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .heart {
@@ -22,7 +33,7 @@ body {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -m-transform: rotate(-45deg);
-  transform: rotate(-45deg)
+  transform: rotate(-45deg);
 }
 
 .heart:before {
@@ -51,24 +62,94 @@ body {
 
 @-webkit-keyframes love {
   0% {
-    top: 110%
+    top: 110%;
   }
 }
 
 @-moz-keyframes love {
   0% {
-    top: 110%
+    top: 110%;
   }
 }
 
 @-ms-keyframes love {
   0% {
-    top: 110%
+    top: 110%;
   }
 }
 
 @keyframes love {
   0% {
-    top: 110%
+    top: 110%;
   }
 }
+/* end of background hearts */
+/* start of carousel */
+.carousel-fade {
+  .carousel-inner {
+    .item {
+      transition-property: opacity;
+    }
+
+    .item,
+    .active.left,
+    .active.right {
+      opacity: 0;
+    }
+
+    .active,
+    .next.left,
+    .prev.right {
+      opacity: 1;
+    }
+
+    .next,
+    .prev,
+    .active.left,
+    .active.right {
+      left: 0;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .carousel-control {
+    z-index: 2;
+  }
+}
+
+html,
+body,
+.carousel,
+.carousel-inner,
+.carousel-inner .item {
+  height: 100%;
+}
+
+.item:nth-child(1) {
+  background: #74c390;
+}
+
+.item:nth-child(2) {
+  background: #51bce8;
+}
+
+.item:nth-child(3) {
+  background: #e46653;
+}
+
+.item:nth-child(4) {
+  background: #74c390;
+}
+
+.item:nth-child(5) {
+  background: #51bce8;
+}
+
+.imageVidCarousel {
+  max-height: 100vh;
+  max-width: 100vw;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+/* end of carousel */
