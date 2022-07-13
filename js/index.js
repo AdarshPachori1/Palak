@@ -19,7 +19,7 @@
     var codeWord = $(".clients").val();
 
     if (codeWord.toLowerCase() == "iloveyouadarsh") {
-      $(".bg_heart, #carousel").fadeIn();
+      $(".bg_heart, #carousel, .wavesOuterDiv").fadeIn();
       $(".introPasswordModal").fadeOut();
     } else {
       $(".code-error").addClass("is-error");
