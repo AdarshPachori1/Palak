@@ -18,7 +18,7 @@
     e.preventDefault();
     var codeWord = $(".clients").val();
 
-    if (codeWord.toLowerCase() == "iloveyouadarsh") {
+    if (codeWord.toLowerCase() == "hi") {
       $(".bg_heart, #carousel, .wavesOuterDiv").fadeIn();
       $(".introPasswordModal").fadeOut();
     } else {
