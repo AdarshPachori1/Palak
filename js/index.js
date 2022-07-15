@@ -135,6 +135,8 @@ var arrayOfCompliments = [
   "20. You push me to be the version of myself.",
   "21. I can be myself around you. ",
   "22. You are the definition of a strong, indepedent woman and I love it.",
+  "23. You are so kind to everyone in my family.",
+  "24. You are such a talented painter, holy shit. ",
 ];
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
