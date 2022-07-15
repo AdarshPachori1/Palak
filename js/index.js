@@ -132,7 +132,7 @@ var arrayOfCompliments = [
   "17. I love that you take charge in our trips by making the itinerary in visiting new places and having new experiences.",
   "18. I love how confident you are in yourself. It makes you shine!",
   "19. I love that you just spontaneously nap, and have trouble waking up from naps. It's pretty funny HAHA.",
-  "20. You push me to be the version of myself.",
+  "20. You push me to be the best version of myself.",
   "21. I can be myself around you. ",
   "22. You are the definition of a strong, indepedent woman and I love it.",
   "23. You are so kind to everyone in my family.",
