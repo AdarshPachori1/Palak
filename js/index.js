@@ -19,7 +19,7 @@
     var codeWord = $(".clients").val();
 
     if (codeWord.toLowerCase() == "iloveyouadarsh") {
-      $(".bg_heart, #carousel, .wavesOuterDiv").fadeIn();
+      $(".bg_heart, #carousel, .wavesOuterDiv, .wishlistOuterDiv").fadeIn();
       $(".introPasswordModal").fadeOut();
     } else {
       $(".code-error").addClass("is-error");
@@ -111,7 +111,7 @@ var love = setInterval(function () {
 //start of carousel
 $(".carousel").carousel();
 //end of carousel
-/* */
+/* start of compliments*/
 var arrayOfCompliments = [
   "1. Your eyes are absolutely beautiful.",
   "2. You have the prettiest smile.",
@@ -159,4 +159,175 @@ complimentButton.onclick = function (event) {
   }
 };
 
-/**/
+/* end of compliments*/
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      newItem: "",
+      list: [],
+    };
+  }
+
+  //incorporating local storage
+  componentDidMount() {
+    this.hydrateStateWithLocalStorage();
+
+    // add event listener to save state to localStorage
+    // when user leaves/refreshes the page
+    window.addEventListener(
+      "beforeunload",
+      this.saveStateToLocalStorage.bind(this)
+    );
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener(
+      "beforeunload",
+      this.saveStateToLocalStorage.bind(this)
+    );
+
+    // saves if component has a chance to unmount
+    this.saveStateToLocalStorage();
+  }
+
+  hydrateStateWithLocalStorage() {
+    // for all items in state
+    for (let key in this.state) {
+      // if the key exists in localStorage
+      if (localStorage.hasOwnProperty(key)) {
+        // get the key's value from localStorage
+        let value = localStorage.getItem(key);
+
+        // parse the localStorage string and setState
+        try {
+          value = JSON.parse(value);
+          this.setState({ [key]: value });
+        } catch (e) {
+          // handle empty string
+          this.setState({ [key]: value });
+        }
+      }
+    }
+  }
+
+  saveStateToLocalStorage() {
+    // for every item in React state
+    for (let key in this.state) {
+      // save to localStorage
+      localStorage.setItem(key, JSON.stringify(this.state[key]));
+    }
+  }
+
+  updateInput(key, value) {
+    // update react state
+    this.setState({ [key]: value });
+  }
+
+  addItem() {
+    // create a new item with unique id
+    const newItem = {
+      id: 1 + Math.random(),
+      value: this.state.newItem.slice(),
+    };
+
+    // copy current list of items
+    const list = [...this.state.list];
+
+    // add the new item to the list
+    list.push(newItem);
+
+    // update state with new list, reset the new item input
+    this.setState({
+      list,
+      newItem: "",
+    });
+  }
+
+  deleteItem(id) {
+    // copy current list of items
+    const list = [...this.state.list];
+    // filter out the item being deleted
+    const updatedList = list.filter((item) => item.id !== id);
+
+    this.setState({ list: updatedList });
+  }
+
+  render() {
+    return /*#__PURE__*/ React.createElement(
+      "div",
+      null /*#__PURE__*/,
+
+      React.createElement(
+        "h1",
+        { className: "app-title" },
+        "MY WISHLIST"
+      ) /*#__PURE__*/,
+
+      React.createElement(
+        "div",
+        { className: "container" } /*#__PURE__*/,
+        React.createElement(
+          "div",
+          {
+            style: {
+              padding: 30,
+              textAlign: "left",
+              maxWidth: 500,
+              margin: "auto",
+            },
+          },
+          "Help Adarsh find out what to buy you! He's got a lot of money now and wants to spend it on you :)" /*#__PURE__*/,
+
+          React.createElement("br", null) /*#__PURE__*/,
+          React.createElement("br", null) /*#__PURE__*/,
+          React.createElement("input", {
+            type: "text",
+            placeholder: "Type item here",
+            value: this.state.newItem,
+            onChange: (e) => this.updateInput("newItem", e.target.value),
+          }) /*#__PURE__*/,
+
+          React.createElement(
+            "button",
+            {
+              className: "add-btn btn-floating",
+              onClick: () => this.addItem(),
+              disabled: !this.state.newItem.length,
+            } /*#__PURE__*/,
+
+            React.createElement("i", { class: "material-icons" }, " + ")
+          ) /*#__PURE__*/,
+
+          React.createElement("br", null),
+          " ",
+          /*#__PURE__*/ React.createElement("br", null) /*#__PURE__*/,
+          React.createElement(
+            "ul",
+            null,
+            this.state.list.map((item) => {
+              return /*#__PURE__*/ React.createElement(
+                "li",
+                { key: item.id },
+                item.value /*#__PURE__*/,
+                React.createElement(
+                  "button",
+                  {
+                    className: "btn btn-floating",
+                    onClick: () => this.deleteItem(item.id),
+                  } /*#__PURE__*/,
+                  React.createElement("i", { class: "material-icons" }, "x")
+                )
+              );
+            })
+          )
+        )
+      )
+    );
+  }
+}
+
+ReactDOM.render(
+  /*#__PURE__*/ React.createElement(App, null),
+  document.getElementById("wishlist")
+);
