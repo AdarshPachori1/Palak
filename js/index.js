@@ -139,6 +139,11 @@ var arrayOfCompliments = [
   "24. You are such a talented painter, holy shit. ",
   "25. You always make time to talk to me, even if you are super busy.",
   "26. You always take into account the way I feel.",
+  "27. I love that you have cultured me into Marvel, Hamilton, and many other things.",
+  "28. I love it when you sing so passionately to the songs of Hamilton or Demi Levato, it's adorable and makes me smile.",
+  "29. I think you are sexy, cute, gorgeous, and pretty all combined into one.",
+  "30. I love that I can very easily carry you.",
+  "31. I love dancing and vibing with you.",
 ];
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
