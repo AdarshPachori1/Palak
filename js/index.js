@@ -155,7 +155,7 @@ complimentButton.onclick = function (event) {
     arrayOfCompliments.splice(rand_int, 1);
   } else {
     complimentPTag.innerHTML =
-      "You've went through all the compliments I've written here but there's hundreds of more amazing things about you that I plan to add to this list soon.";
+      "You've went through all the things I've written here but there's hundreds of more amazing things about you that I plan to add to this list soon.";
   }
 };
 
